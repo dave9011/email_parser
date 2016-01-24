@@ -9,9 +9,16 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import org.apache.commons.io.FileUtils;
 
 public class EmailParser {
+    
+    private final String[] HEADER_FIELD_NAMES = {
+        //Fields specified in RFC2822 divided (not all included)
+        "Date", "From", "Sender", "Reply-To", "To", "Cc", "Bcc", "Message-ID", "In-Reply-To",
+        "References", "Subject", "Commments", "Keywords", "Return-Path"
+    };
 
     //By default folding is disabled
     private boolean foldingEnabled = false;
@@ -26,8 +33,7 @@ public class EmailParser {
     
     private File mEmail;
     
-    //private static HashMap<String, String>    
-    //private static String from_field;
+    private JTextArea mOutputArea;
     
     private String[] fields = {  
         "Date:", 
@@ -42,11 +48,8 @@ public class EmailParser {
         "Mime Version:"
     }; 
     
-    //TODO: Implementation for parsing header fields were folding is present
-    void parseHeadersWithFold(){};
-    
-    void parseHeadersWithNoFold(){
-        
+    public EmailParser(JTextArea jTextArea) {
+        mOutputArea = jTextArea;
     }
     
     public void parse(String filePath) {
@@ -65,17 +68,21 @@ public class EmailParser {
             return;
         }
             
-        String unfoldedEmail = unfold(mEmail, false);
+        //Unfold the email, trim the result, and append an EOF character which
+        //will be necessary when we tokenize
+        String unfoldedEmail = unfold(mEmail, false).trim().concat("\u001a");
+        
+        Tokenizer tokenizer = new Tokenizer();
+        tokenizer.tokenize(unfoldedEmail);
+        
+        tokenizer.logTokens(mOutputArea);
         
         //initialize scanner, making its delimiter a CRLF to parse the header fields
         Scanner scanner = new Scanner(unfoldedEmail).useDelimiter("\r\n");
-
-        //Tokenizer tokenizer = new Tokenizer();
         
+        //log("\n---------------Header Fields----------------");        COMMENTED THIS OUT FOR TESTING TOKENIZER
         
-        
-        log("\n---------------Header Fields----------------");
-        
+        /*
         scanLoop:
         while(scanner.hasNextLine()){
 
@@ -94,7 +101,8 @@ public class EmailParser {
             if(line.startsWith("Received:")){
                 //line = line.replaceFirst("Received:", "");
                 //line = line.trim();
-                log(line);
+                
+                //log(line);        COMMENTED THIS OUT FOR TESTING TOKENIZER
                 
                 line = line.replaceFirst("\\s*Received:\\s*", "");
                 emailLines.add(line); 
@@ -102,11 +110,11 @@ public class EmailParser {
                 continue scanLoop;
             } 
 
-            for(String fld : fields) { 
+            for(String fld : HEADER_FIELD_NAMES) { 
 
                 if(line.startsWith(fld)) {
                     
-                    log(line);
+                    //log(line);    COMMENTED THIS OUT FOR TESTING TOKENIZER
                     
                     emailLines.add(line); 
 
@@ -118,9 +126,9 @@ public class EmailParser {
 
         }
         
-        log("\n---------------Message Body----------------");
+        //log("\n---------------Message Body----------------"); COMMENTED THIS OUT FOR TESTING TOKENIZER
         while(scanner.hasNextLine()){
-            log(scanner.nextLine());
+            //log(scanner.nextLine());   COMMENTED THIS OUT FOR TESTING TOKENIZER
         }
 
 
@@ -133,7 +141,14 @@ public class EmailParser {
         //}
 
         //log();
+        * 
+        * */
        
+        
+        
+    }
+    
+    private void parseHeaders(){
         
         
     }
@@ -182,7 +197,7 @@ public class EmailParser {
         
     }
     
-    private static void log(String str){
+    private void log(String str){
         System.out.println(str);
     }
     

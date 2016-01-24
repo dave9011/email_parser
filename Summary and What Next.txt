@@ -37,6 +37,7 @@ B. What next:
 		
 		NEW STUFF(JANUARY 2016):
 			d - perhaps, verify if if email is valid syntax
+			e - UI blocking code when logging to output_TA
 		
 
 	2. Minor:
@@ -74,3 +75,9 @@ C. Common Header Fields
 	notes: based on this information I will use the following code to initialize my scanner, which will use a "\r\n"
 				delimiter: Scanner sMain = new Scanner(inputStream,"UTF-8").useDelimiter("\r\n");
 
+				
+				
+TODO LIST:
+
+ 1. In line: "lexeme = matcher.group().trim();" of EmailParser, we should check if the line already ends in EOF
+		to avoid appending an extra one

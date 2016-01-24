@@ -5,8 +5,7 @@
 
 package email.parser;
 
-public class EmailParserDriver {
-    public static void main(String args[]){
-        EmailParseUI.main(args);
-    }
+
+public class HeaderField {
+
 }
