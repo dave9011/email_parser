@@ -1,0 +1,42 @@
+                                                                                                                                                                                                                                                               
+Delivered-To: hrdavidl@gmail.com
+Received: by 10.76.7.169 with SMTP id k9csp338835oaa;
+        Thu, 12 Dec 2013 13:38:08 -0800 (PST)
+X-Received: by 10.68.189.133 with SMTP id gi5mr15900732pbc.57.1386884287718;
+        Thu, 12 Dec 2013 13:38:07 -0800 (PST)
+Return-Path: <amhr99@hotmail.com>
+Received: from col0-omc3-s15.col0.hotmail.com (col0-omc3-s15.col0.hotmail.com. [65.55.34.153])
+        by mx.google.com with ESMTP id wh6si17501764pac.103.2013.12.12.13.38.07
+        for <hrdavidl@gmail.com>;
+        Thu, 12 Dec 2013 13:38:07 -0800 (PST)
+Received-SPF: pass (google.com: domain of amhr99@hotmail.com designates 65.55.34.153 as permitted sender) client-ip=65.55.34.153;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of amhr99@hotmail.com designates 65.55.34.153 as permitted sender) smtp.mail=amhr99@hotmail.com
+Received: from COL402-EAS57 ([65.55.34.135]) by col0-omc3-s15.col0.hotmail.com with Microsoft SMTPSVC(6.0.3790.4675);
+	 Thu, 12 Dec 2013 13:38:07 -0800
+X-TMN: [lzGe2YLHh0BwSFPN2KRaCnc/1P2pMcQw]
+X-Originating-Email: [amhr99@hotmail.com]
+Message-ID: <COL402-EAS57F251BC92C246548D4F88D9DC0@phx.gbl>
+Return-Path: amhr99@hotmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+Subject: Check deposit confirmation
+From: "Ana  Marta" <amhr99@hotmail.com>
+Date: Thu, 12 Dec 2013 16:38:03 -0500
+To: David L Hernandez <hrdavidl@gmail.com>
+MIME-Version: 1.0 (1.0)
+X-OriginalArrivalTime: 12 Dec 2013 21:38:07.0448 (UTC) FILETIME=[72392580:01CEF782]
+
+Your deposit of $100.00 has been sent.
+Confirmation #: 10783914
+
+Hold onto your check for 21 days. Checks sent before 4 P.M. EST will be depo=
+sited by 5 P.M. EST the same business day, any checks sent after 4 P.M. or o=
+n non-business days will be deposited the following business day.  If we enc=
+ounter any issues with your check(s) we will contact you via email within 1 b=
+usiness day. Availability of your deposit may vary, review the deposit for d=
+etails.
+
+
+Ana Marta
+Sent from my iPhone

@@ -1,0 +1,265 @@
+                                                                                                                                                                                                                                                               
+Delivered-To: hrdavidl@gmail.com
+Received: by 10.112.211.165 with SMTP id nd5csp121113lbc;
+        Sun, 24 Aug 2014 21:21:13 -0700 (PDT)
+X-Received: by 10.220.200.195 with SMTP id ex3mr3366965vcb.63.1408940472911;
+        Sun, 24 Aug 2014 21:21:12 -0700 (PDT)
+Return-Path: <espnfantasy@fantasygames.go.com>
+Received: from n7smtphv02if.starwave.com (n7smtphv02if.starwave.com. [68.71.217.52])
+        by mx.google.com with ESMTP id qu14si16906869vdb.23.2014.08.24.21.21.12
+        for <hrdavidl@gmail.com>;
+        Sun, 24 Aug 2014 21:21:12 -0700 (PDT)
+Received-SPF: pass (google.com: domain of espnfantasy@fantasygames.go.com designates 68.71.217.52 as permitted sender) client-ip=68.71.217.52;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of espnfantasy@fantasygames.go.com designates 68.71.217.52 as permitted sender) smtp.mail=espnfantasy@fantasygames.go.com
+Received: from n7smtpqadm01.starwave.com (n7smtpq01.starwave.com
+        [10.198.68.16])
+        by n7smtphv02i.starwave.com (Sendmail OMA v1.6.8)
+        with SMTP id s7OLLB22827k9pHl; Sun, 24 Aug 2014 21:21:11 -0700
+        (PDT)
+Received: from n7espnapp1019.starwave.com (N7ESPNAPP1019.starwave.com [10.198.65.153])
+	by n7smtpqadm01.starwave.com (Sentrion-MTA-4.3.1/Sentrion-MTA-4.3.1) with ESMTP id s7P4KVq1001187
+	for <hrdavidl@gmail.com>; Sun, 24 Aug 2014 21:20:31 -0700
+Date: Sun, 24 Aug 2014 21:20:31 -0700 (PDT)
+From: espnfantasy@fantasygames.go.com
+Message-ID: <1798183436.121931408940431982.JavaMail._seespn_svc@n7espnapp1019.starwave.com>
+Subject: ESPN Live Draft Results
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Your live draft results for Can't Seem to Find Molly are listed by round at the end of this message.
+
+You can also check out your league by clicking below:
+http://games.espn.go.com/ffl/leagueoffice?leagueId=481848
+
+Good luck this football season.
+
+- The ESPN Fantasy Team
+
+**- Represent your picks
+
+
+Round: 1
+(1) Welker Texas Ranger - Adrian Peterson RB 
+(2) Comeback Kings - Jamaal Charles RB 
+(3) TD's And Beer - LeSean McCoy RB 
+(4) Lucky Charms - Matt Forte RB 
+(5) Insane Clowney  Posse - Marshawn Lynch RB 
+(6) Captain Insano Shows No Mercy - Calvin Johnson WR 
+(7) Jew Doculous - Peyton Manning QB 
+** (8) Pure Instinct - Demaryius Thomas WR 
+(9) LeDirt Cup - Drew Brees QB 
+(10) Get off my Ditka - Arian Foster RB 
+(11) Muddy MudBloods - Eddie Lacy RB 
+(12) GIVE ME  THIRD PICK - Doug Martin RB 
+
+Round: 2
+(13) GIVE ME  THIRD PICK - Jimmy Graham TE 
+(14) Muddy MudBloods - Montee Ball RB 
+(15) Get off my Ditka - Aaron Rodgers QB 
+(16) LeDirt Cup - Dez Bryant WR 
+** (17) Pure Instinct - A.J. Green WR 
+(18) Jew Doculous - DeMarco Murray RB 
+(19) Captain Insano Shows No Mercy - Brandon Marshall WR 
+(20) Insane Clowney  Posse - Alfred Morris RB 
+(21) Lucky Charms - Zac Stacy RB 
+(22) TD's And Beer - Alshon Jeffery WR 
+(23) Comeback Kings - Julio Jones WR 
+(24) Welker Texas Ranger - Antonio Brown WR 
+
+Round: 3
+(25) Welker Texas Ranger - Jordy Nelson WR 
+(26) Comeback Kings - Julius Thomas TE 
+(27) TD's And Beer - Matthew Stafford QB 
+(28) Lucky Charms - Reggie Bush RB 
+(29) Insane Clowney  Posse - Andre Johnson WR 
+(30) Captain Insano Shows No Mercy - Giovani Bernard RB 
+(31) Jew Doculous - Le'Veon Bell RB 
+** (32) Pure Instinct - Rob Gronkowski TE 
+(33) LeDirt Cup - C.J. Spiller RB 
+(34) Get off my Ditka - Larry Fitzgerald WR 
+(35) Muddy MudBloods - Randall Cobb WR 
+(36) GIVE ME  THIRD PICK - Andrew Luck QB 
+
+Round: 4
+(37) GIVE ME  THIRD PICK - Victor Cruz WR 
+(38) Muddy MudBloods - Andre Ellington RB 
+(39) Get off my Ditka - Vincent Jackson WR 
+(40) LeDirt Cup - Trent Richardson RB 
+** (41) Pure Instinct - Cam Newton QB 
+(42) Jew Doculous - Ben Tate RB 
+(43) Captain Insano Shows No Mercy - Keenan Allen WR 
+(44) Insane Clowney  Posse - Pierre Garcon WR 
+(45) Lucky Charms - Michael Floyd WR 
+(46) TD's And Beer - Ryan Mathews RB 
+(47) Comeback Kings - Russell Wilson QB 
+(48) Welker Texas Ranger - Stevan Ridley RB 
+
+Round: 5
+(49) Welker Texas Ranger - Tom Brady QB 
+(50) Comeback Kings - Toby Gerhart RB 
+(51) TD's And Beer - Michael Crabtree WR 
+(52) Lucky Charms - Cordarrelle Patterson WR 
+(53) Insane Clowney  Posse - Vernon Davis TE 
+(54) Captain Insano Shows No Mercy - Ray Rice RB 
+(55) Jew Doculous - Roddy White WR 
+** (56) Pure Instinct - Joique Bell RB 
+(57) LeDirt Cup - DeSean Jackson WR 
+(58) Get off my Ditka - Wes Welker WR 
+(59) Muddy MudBloods - Jordan Cameron TE 
+(60) GIVE ME  THIRD PICK - Julian Edelman WR 
+
+Round: 6
+(61) GIVE ME  THIRD PICK - Maurice Jones-Drew RB 
+(62) Muddy MudBloods - Robert Griffin III QB 
+(63) Get off my Ditka - Frank Gore RB 
+(64) LeDirt Cup - Rashad Jennings RB 
+** (65) Pure Instinct - Marques Colston WR 
+(66) Jew Doculous - Shane Vereen RB 
+(67) Captain Insano Shows No Mercy - Reggie Wayne WR 
+(68) Insane Clowney  Posse - Nick Foles QB 
+(69) Lucky Charms - Kendall Wright WR 
+(70) TD's And Beer - Jeremy Maclin WR 
+(71) Comeback Kings - Golden Tate WR 
+(72) Welker Texas Ranger - Jason Witten TE 
+
+Round: 7
+(73) Welker Texas Ranger - Seahawks D/ST D/ST 
+(74) Comeback Kings - Dennis Pitta TE 
+(75) TD's And Beer - Greg Olsen TE 
+(76) Lucky Charms - Pierre Thomas RB 
+(77) Insane Clowney  Posse - T.Y. Hilton WR 
+(78) Captain Insano Shows No Mercy - Fred Jackson RB 
+(79) Jew Doculous - Percy Harvin WR 
+** (80) Pure Instinct - Lamar Miller RB 
+(81) LeDirt Cup - Emmanuel Sanders WR 
+(82) Get off my Ditka - Chris Johnson RB 
+(83) Muddy MudBloods - Torrey Smith WR 
+(84) GIVE ME  THIRD PICK - Terrance Williams WR 
+
+Round: 8
+(85) GIVE ME  THIRD PICK - Anquan Boldin WR 
+(86) Muddy MudBloods - Kelvin Benjamin WR 
+(87) Get off my Ditka - Darren Sproles RB 
+(88) LeDirt Cup - Kyle Rudolph TE 
+** (89) Pure Instinct - Steven Jackson RB 
+(90) Jew Doculous - Mike Wallace WR 
+(91) Captain Insano Shows No Mercy - Jordan Reed TE 
+(92) Insane Clowney  Posse - Bishop Sankey RB 
+(93) Lucky Charms - Eric Decker WR 
+(94) TD's And Beer - 49ers D/ST D/ST 
+(95) Comeback Kings - Matt Ryan QB 
+(96) Welker Texas Ranger - Riley Cooper WR 
+
+Round: 9
+(97) Welker Texas Ranger - Steve Smith WR 
+(98) Comeback Kings - DeAndre Hopkins WR 
+(99) TD's And Beer - Danny Woodhead RB 
+(100) Lucky Charms - Jay Cutler QB 
+(101) Insane Clowney  Posse - Sammy Watkins WR 
+(102) Captain Insano Shows No Mercy - Knowshon Moreno RB 
+(103) Jew Doculous - Cecil Shorts WR 
+** (104) Pure Instinct - Colin Kaepernick QB 
+(105) LeDirt Cup - Greg Jennings WR 
+(106) Get off my Ditka - Broncos D/ST D/ST 
+(107) Muddy MudBloods - Tony Romo QB 
+(108) GIVE ME  THIRD PICK - Mark Ingram RB 
+
+Round: 10
+(109) GIVE ME  THIRD PICK - Jonathan Stewart RB 
+(110) Muddy MudBloods - Justin Hunter WR 
+(111) Get off my Ditka - Martellus Bennett TE 
+(112) LeDirt Cup - Darren McFadden RB 
+** (113) Pure Instinct - Panthers D/ST D/ST 
+(114) Jew Doculous - Danny Amendola WR 
+(115) Captain Insano Shows No Mercy - Philip Rivers QB 
+(116) Insane Clowney  Posse - Dwayne Bowe WR 
+(117) Lucky Charms - Zach Ertz TE 
+(118) TD's And Beer - Stephen Gostkowski K 
+(119) Comeback Kings - DeAngelo Williams RB 
+(120) Welker Texas Ranger - Khiry Robinson RB 
+
+Round: 11
+(121) Welker Texas Ranger - Hakeem Nicks WR 
+(122) Comeback Kings - Steven Hauschka K 
+(123) TD's And Beer - Mike Evans WR 
+(124) Lucky Charms - Kenny Stills WR 
+(125) Insane Clowney  Posse - Chiefs D/ST D/ST 
+(126) Captain Insano Shows No Mercy - Josh Gordon WR 
+(127) Jew Doculous - LeGarrette Blount RB 
+** (128) Pure Instinct - James Starks RB 
+(129) LeDirt Cup - Tavon Austin WR 
+(130) Get off my Ditka - Justin Tucker K 
+(131) Muddy MudBloods - Rueben Randle WR 
+(132) GIVE ME  THIRD PICK - Delanie Walker TE 
+
+Round: 12
+(133) GIVE ME  THIRD PICK - Buccaneers D/ST D/ST 
+(134) Muddy MudBloods - Cardinals D/ST D/ST 
+(135) Get off my Ditka - Chris Ivory RB 
+(136) LeDirt Cup - Bengals D/ST D/ST 
+** (137) Pure Instinct - Knile Davis RB 
+(138) Jew Doculous - Charles Clay TE 
+(139) Captain Insano Shows No Mercy - Ben Roethlisberger QB 
+(140) Insane Clowney  Posse - Shonn Greene RB 
+(141) Lucky Charms - Carlos Hyde RB 
+(142) TD's And Beer - Jeremy Hill RB 
+(143) Comeback Kings - Bernard Pierce RB 
+(144) Welker Texas Ranger - James Jones WR 
+
+Round: 13
+(145) Welker Texas Ranger - Mason Crosby K 
+(146) Comeback Kings - Christine Michael RB 
+(147) TD's And Beer - Chris Polk RB 
+(148) Lucky Charms - Rams D/ST D/ST 
+(149) Insane Clowney  Posse - Adam Vinatieri K 
+(150) Captain Insano Shows No Mercy - Heath Miller TE 
+(151) Jew Doculous - Andy Dalton QB 
+** (152) Pure Instinct - Matt Prater K 
+(153) LeDirt Cup - Blair Walsh K 
+(154) Get off my Ditka - Donald Brown RB 
+(155) Muddy MudBloods - Devonta Freeman RB 
+(156) GIVE ME  THIRD PICK - Phil Dawson K 
+
+Round: 14
+(157) GIVE ME  THIRD PICK - Andrew Hawkins WR 
+(158) Muddy MudBloods - Brian Hartline WR 
+(159) Get off my Ditka - Terrance West RB 
+(160) LeDirt Cup - Johnny Manziel QB 
+** (161) Pure Instinct - Roy Helu RB 
+(162) Jew Doculous - Patriots D/ST D/ST 
+(163) Captain Insano Shows No Mercy - Browns D/ST D/ST 
+(164) Insane Clowney  Posse - C.J. Anderson RB 
+(165) Lucky Charms - Nick Novak K 
+(166) TD's And Beer - Brandin Cooks WR 
+(167) Comeback Kings - Andre Williams RB 
+(168) Welker Texas Ranger - Blake Bortles QB 
+
+Round: 15
+(169) Welker Texas Ranger - Antonio Gates TE 
+(170) Comeback Kings - Bills D/ST D/ST 
+(171) TD's And Beer - Carson Palmer QB 
+(172) Lucky Charms - Ryan Tannehill QB 
+(173) Insane Clowney  Posse - Jarrett Boykin WR 
+(174) Captain Insano Shows No Mercy - Dan Bailey K 
+(175) Jew Doculous - Ahmad Bradshaw RB 
+** (176) Pure Instinct - Lance Dunbar RB 
+(177) LeDirt Cup - Tre Mason RB 
+(178) Get off my Ditka - Eli Manning QB 
+(179) Muddy MudBloods - Shayne Graham K 
+(180) GIVE ME  THIRD PICK - Ladarius Green TE 
+
+Round: 16
+(181) GIVE ME  THIRD PICK - Jake Locker QB 
+(182) Muddy MudBloods - Markus Wheaton WR 
+(183) Get off my Ditka - Jordan Todman RB 
+(184) LeDirt Cup - Jared Cook TE 
+** (185) Pure Instinct - Marqise Lee WR 
+(186) Jew Doculous - Robbie Gould K 
+(187) Captain Insano Shows No Mercy - Dexter McCluster WR 
+(188) Insane Clowney  Posse - Steve Johnson WR 
+(189) Lucky Charms - Miles Austin WR 
+(190) TD's And Beer - Kenbrell Thompkins WR 
+(191) Comeback Kings - Latavius Murray RB 
+(192) Welker Texas Ranger - BenJarvus Green-Ellis RB

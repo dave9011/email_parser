@@ -1,0 +1,213 @@
+                                                                                                                                                                                                                                                               
+Delivered-To: hrdavidl@gmail.com
+Received: by 10.27.179.91 with SMTP id c88csp896707wlf;
+        Fri, 22 Jan 2016 08:04:37 -0800 (PST)
+X-Received: by 10.107.166.85 with SMTP id p82mr4386964ioe.146.1453478677105;
+        Fri, 22 Jan 2016 08:04:37 -0800 (PST)
+Return-Path: <joshua.friscea@jesusfilm.org>
+Received: from mail-ig0-x22f.google.com (mail-ig0-x22f.google.com. [2607:f8b0:4001:c05::22f])
+        by mx.google.com with ESMTPS id x5si5243522igx.24.2016.01.22.08.04.36
+        for <hrdavidl@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 22 Jan 2016 08:04:37 -0800 (PST)
+Received-SPF: pass (google.com: domain of joshua.friscea@jesusfilm.org designates 2607:f8b0:4001:c05::22f as permitted sender) client-ip=2607:f8b0:4001:c05::22f;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of joshua.friscea@jesusfilm.org designates 2607:f8b0:4001:c05::22f as permitted sender) smtp.mailfrom=joshua.friscea@jesusfilm.org;
+       dkim=pass header.i=@jesusfilm-org.20150623.gappssmtp.com
+Received: by mail-ig0-x22f.google.com with SMTP id t15so149310408igr.0
+        for <hrdavidl@gmail.com>; Fri, 22 Jan 2016 08:04:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=jesusfilm-org.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:date:message-id:subject:from:to:cc:content-type;
+        bh=esg+CiLnpDopaQxtn/6HeT/DtKaLZTXEgkdJLXvdO+U=;
+        b=PIBdF+c9vwELmC+hsT6SbYZZgOtBLJoshCjzDmPKH0h6XIiDlQudN8Uvo/hf6RTRAL
+         JUWJPufneiGPWHl18gUYk647GSdWZ7wH6m4/b2ME2F6jMa6IJPAQAwJWc+3OWnPycmpG
+         FwNvrlISzNinOL5buByIxMn3wGnJvL7DzMnzXe2/izilOo62h4z3zyMRxLjpn4CbBaHl
+         ktIatZhah1vNqjYB3uhtDGzbE91BZyoRZygMBmd2M+0QQeDXBIia5shJLkt8MsOaIupR
+         iCsoHIazHxvBO+/pmYW/fVr/i8YOHV0vR+askuIc4gmZcQXEQfBWDaxzNH40j7a3SrD1
+         4B0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:date:message-id:subject:from:to:cc
+         :content-type;
+        bh=esg+CiLnpDopaQxtn/6HeT/DtKaLZTXEgkdJLXvdO+U=;
+        b=akGF4yl7UKjbr0brTgImCusp6OKRJvqbrtitohH8x81YDFd+I6Vs8E3lpxkvd0F6X+
+         +0uauGbloDLmCKZbACjutMaPtw+KBfUs/m6tYCM2+V53GWWNa497jyQTj45Lz5dwLa6f
+         Fuc/s14y9ADGj50QgoRgc+ZivTY2LJoVXSqrLKFHxU18n7Qiszj2xdbEAKtuuOgnqFLC
+         taKnP/fIuinmi+2/HP9lA9bhRK3DV1e7trmrTgGS2DNpIz7NbtSPNccwMi7tDYZnln+l
+         NZLc0CxkMPWKae7KKrXTmjd4Z75FkSTivci3ODXcNVqsPPngfHub+AXOdCmjSbhsOTOA
+         FnSQ==
+X-Gm-Message-State: AG10YOReVmj1JaECio37uDeedYXEX+QL4K3iM6EEF6kYTJZ8vCTjg/LJXZkYo7Oms9ydh90ZQystr/tRRfUZ63EM
+MIME-Version: 1.0
+X-Received: by 10.50.150.66 with SMTP id ug2mr4114727igb.33.1453478676403;
+ Fri, 22 Jan 2016 08:04:36 -0800 (PST)
+Received: by 10.107.153.82 with HTTP; Fri, 22 Jan 2016 08:04:36 -0800 (PST)
+Date: Fri, 22 Jan 2016 11:04:36 -0500
+Message-ID: <CABZQOB3eJ6jTyOGk_tbhaPTb6oFr+NDCK31mq+9Ttfah1vyeFw@mail.gmail.com>
+Subject: Coding practicals
+From: Joshua Friscea <joshua.friscea@jesusfilm.org>
+To: hrdavidl@gmail.com
+Cc: Sway Ciaramello <sway.ciaramello@jesusfilm.org>
+Content-Type: multipart/alternative; boundary=001a1134df6832479f0529ee6015
+
+--001a1134df6832479f0529ee6015
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Morning David,
+
+It was great talking with you yesterday. Sway and I are both excited to
+keep the ball moving forward with your interview process.
+
+I am sending you two coding practicals. Use the programming language that
+you are most comfortable with. Let me know if you have any further
+questions!
+
+*FizzBuzz*
+
+Write a program that prints the numbers from 1 to 100. But for multiples of
+three print =E2=80=9CFizz=E2=80=9D instead of the number and for the multip=
+les of five
+print =E2=80=9CBuzz=E2=80=9D. For numbers which are multiples of both three=
+ and five print
+=E2=80=9CFizzBuzz=E2=80=9D. Print a new line after each string or number.
+
+
+*Parsing an Email*
+
+What do we mean by parse an email? Go to Gmail, open an incoming email, and
+do View Original. You should see a text file of a raw email. The goal here
+is to parse that and extract relevant fields.
+
+This is actually a very difficult thing and a proper implementation could
+take months. However, it's possible to do the basics, without handling all
+of the intricacies, in maybe an hour.
+Your goals:
+
+   - Take in an email and parse it into relevant fields. Figure out what
+   those relevant fields are.
+   - Create a good foundation. Try to write extensible/maintainable code.
+   - When you're done, list out next steps you'd take in your
+   implementation. Eg, 'I'd focus on handling different MIME types in the
+   body', etc.
+   - Don't use a library like TMail that does parsing for you, but feel
+   free to use any non- email-specific libraries you want to.
+
+A few notes about your goals:
+
+   - The directions are purposefully vague. Make decisions on what you
+   think is best for the goal you're trying to accomplish. Feel free to tel=
+l
+   us why you made certain decisions in your summary.
+   - Use the RFC Email Specs as a starting point to help you parse the
+   email.
+   - Google is your friend!
+
+
+--=20
+
+
+*Joshua Friscea*
+Technical Project Manager
+Jesus Film Media
+
+c: 407-267-6622
+JesusFilmMedia.org <http://www.jesusfilmmedia.org/>
+
+--001a1134df6832479f0529ee6015
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div class=3D"gmail_default" style=3D"font-family:arial,he=
+lvetica,sans-serif"><div class=3D"gmail_default" style=3D"font-family:arial=
+,sans-serif;font-size:12.8px"><font face=3D"arial, helvetica, sans-serif">M=
+orning David,</font></div><div class=3D"gmail_default" style=3D"font-family=
+:arial,sans-serif;font-size:12.8px"><font face=3D"arial, helvetica, sans-se=
+rif"><br></font></div><div class=3D"gmail_default" style=3D"font-family:ari=
+al,sans-serif;font-size:12.8px"><font face=3D"arial, helvetica, sans-serif"=
+>It was great talking with you yesterday. Sway and I are both excited to ke=
+ep the ball moving forward with your interview process.</font></div><div cl=
+ass=3D"gmail_default" style=3D"font-family:arial,sans-serif;font-size:12.8p=
+x"><font face=3D"arial, helvetica, sans-serif"><br></font></div><div class=
+=3D"gmail_default" style=3D"font-family:arial,sans-serif;font-size:12.8px">=
+<font face=3D"arial, helvetica, sans-serif">I am sending you two=C2=A0<span=
+ class=3D"">coding</span>=C2=A0<span class=3D"">practicals</span>. Use the =
+programming language that you are most comfortable with. Let me know if you=
+ have any further questions!</font></div><div class=3D"gmail_default" style=
+=3D"font-family:arial,sans-serif;font-size:12.8px"><font face=3D"arial, hel=
+vetica, sans-serif"><br></font></div><div class=3D"gmail_default" style=3D"=
+font-family:arial,sans-serif;font-size:12.8px"><b><font face=3D"arial, helv=
+etica, sans-serif">FizzBuzz</font></b></div><div class=3D"gmail_default" st=
+yle=3D"font-family:arial,sans-serif;font-size:12.8px"><b><font face=3D"aria=
+l, helvetica, sans-serif"><br></font></b></div><div class=3D"gmail_default"=
+ style=3D"font-family:arial,sans-serif;font-size:12.8px"><font face=3D"aria=
+l, helvetica, sans-serif"><span style=3D"color:rgb(37,44,51);line-height:18=
+px;word-spacing:1px">Write a program that prints the numbers from 1 to 100.=
+ But for multiples of three print =E2=80=9CFizz=E2=80=9D instead of the num=
+ber and for the multiples of five print =E2=80=9CBuzz=E2=80=9D. For numbers=
+ which are multiples of both three and five print =E2=80=9CFizzBuzz=E2=80=
+=9D. Print a new line after each string or number.</span><br></font></div><=
+div class=3D"gmail_default" style=3D"font-family:arial,sans-serif;font-size=
+:12.8px"><span style=3D"color:rgb(37,44,51);line-height:18px;word-spacing:1=
+px"><font face=3D"arial, helvetica, sans-serif"><br></font></span></div><di=
+v class=3D"gmail_default" style=3D"font-family:arial,sans-serif;font-size:1=
+2.8px"><br></div><div class=3D"gmail_default" style=3D"font-family:arial,sa=
+ns-serif;font-size:12.8px"><span style=3D"font-family:arial,helvetica,sans-=
+serif;color:rgb(0,0,0);line-height:26px"><b>Parsing an Email</b></span><br>=
+</div><div class=3D"gmail_default" style=3D"font-family:arial,sans-serif;fo=
+nt-size:12.8px"><p style=3D"color:rgb(0,0,0);line-height:26px"><font face=
+=3D"arial, helvetica, sans-serif">What do we mean by parse an email? Go to =
+Gmail, open an incoming email, and do View Original. You should see a text =
+file of a raw email. The goal here is to parse that and extract relevant fi=
+elds.</font></p><p style=3D"color:rgb(0,0,0);line-height:26px"><span style=
+=3D"font-family:arial,helvetica,sans-serif">This is actually a very difficu=
+lt thing and a proper implementation could take months. However, it&#39;s p=
+ossible to do the basics, without handling all of the intricacies, in maybe=
+ an hour.</span></p><h4 style=3D"margin:0px;padding:0px;color:rgb(0,0,0);li=
+ne-height:26px"><font face=3D"arial, helvetica, sans-serif">Your goals:</fo=
+nt></h4><ul style=3D"margin:0px;padding:0px 0px 20px 20px;color:rgb(0,0,0);=
+line-height:26px"><li style=3D"margin-left:15px"><font face=3D"arial, helve=
+tica, sans-serif">Take in an email and parse it into relevant fields. Figur=
+e out what those relevant fields are.</font></li><li style=3D"margin-left:1=
+5px"><font face=3D"arial, helvetica, sans-serif">Create a good foundation. =
+Try to write extensible/maintainable=C2=A0<span class=3D"">code</span>.</fo=
+nt></li><li style=3D"margin-left:15px"><font face=3D"arial, helvetica, sans=
+-serif">When you&#39;re done, list out next steps you&#39;d take in your im=
+plementation. Eg, &#39;I&#39;d focus on handling different MIME types in th=
+e body&#39;, etc.</font></li><li style=3D"margin-left:15px"><font face=3D"a=
+rial, helvetica, sans-serif">Don&#39;t use a library like TMail that does p=
+arsing for you, but feel free to use any non- email-specific libraries you =
+want to.</font></li></ul><h4 style=3D"margin:0px;padding:0px;color:rgb(0,0,=
+0);line-height:26px"><font face=3D"arial, helvetica, sans-serif">A few note=
+s about your goals:</font></h4><ul style=3D"margin:0px;padding:0px 0px 20px=
+ 20px;color:rgb(0,0,0);line-height:26px"><li style=3D"margin-left:15px"><fo=
+nt face=3D"arial, helvetica, sans-serif">The directions are purposefully va=
+gue. Make decisions on what you think is best for the goal you&#39;re tryin=
+g to accomplish. Feel free to tell us why you made certain decisions in you=
+r summary.</font></li><li style=3D"margin-left:15px"><font face=3D"arial, h=
+elvetica, sans-serif">Use the RFC Email Specs as a starting point to help y=
+ou parse the email.</font></li><li style=3D"margin-left:15px"><font face=3D=
+"arial, helvetica, sans-serif">Google is your friend!</font></li></ul></div=
+></div><div><br></div>-- <br><div class=3D"gmail_signature"><div dir=3D"ltr=
+"><p style=3D"margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times=
+ New Roman&#39;,serif"><strong><span style=3D"font-size:10.5pt;font-family:=
+Arial,sans-serif;color:gray"><br>Joshua Friscea</span></strong><span style=
+=3D"font-size:10.5pt;font-family:Arial,sans-serif;color:gray"><br></span><s=
+pan style=3D"font-size:9pt;font-family:Arial,sans-serif;color:gray">Technic=
+al Project Manager<br></span><font color=3D"#ff0000" style=3D"font-family:a=
+rial,sans-serif;font-size:13px">Jesus</font><span style=3D"color:rgb(80,0,8=
+0);font-family:arial,sans-serif;font-size:13px">=C2=A0</span><font color=3D=
+"#351c75" style=3D"font-family:arial,sans-serif;font-size:13px">Film</font>=
+<span style=3D"color:rgb(80,0,80);font-family:arial,sans-serif;font-size:13=
+px">=C2=A0</span><font color=3D"#3d85c6" style=3D"font-family:arial,sans-se=
+rif;font-size:13px">Media</font><span style=3D"font-size:9pt;font-family:Ar=
+ial,sans-serif;color:gray"><br></span></p><div><p style=3D"margin:0in 0in 0=
+.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif"><span s=
+tyle=3D"font-size:9pt;font-family:Arial,sans-serif;color:gray">c:=C2=A0<a v=
+alue=3D"+14076191796" style=3D"color:rgb(17,85,204)">407-267-6622</a></span=
+><span style=3D"color:gray"><br><a href=3D"http://www.jesusfilmmedia.org/" =
+style=3D"color:rgb(17,85,204)" target=3D"_blank">JesusFilmMedia.org</a></sp=
+an></p></div></div></div>
+</div>
+
+--001a1134df6832479f0529ee6015--

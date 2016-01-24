@@ -1,0 +1,76 @@
+
+A. Summary:
+
+	To code this short program I began by reading up on the RFC email specs, as suggested by your website, found in
+	the: Proposed standard for Internet Message Format (RFC2822). In addition, I looked up a several websites that 
+	discussed full email headers and how to analyze them. From this I made the following decisions:
+	
+		1. Parse out the following fields as they seem to be the most relevant and the most common(I categorized as most  
+			common the fields that most appeared on the websites I researched):
+			
+				a. Date*
+				b. From*
+				c. To
+				d. Subject
+				e. Delivery-Date
+				f. X-Originating-IP**
+				g. Received 
+				h. Message-ID
+				i. Return-Path		
+				
+				* "Date" and "From" are the only two fields that are mandatory in an email header. For this reason I extracted it,
+				   even though "From" can be easily forged and therefore is not a reliable header field		
+
+				** Not a standard header field but can be used to quickly find the IP address of the original sender; this can also
+					be achieved by looking at the IP address of the last "Received" header
+					
+		2. Add a method that "unfolds" the e-mail. This method returns a string representation of the unfolded e-mail and has a 
+			parameter that allows the user to keep the extra whitespace after unfolding or remove (false by default).
+
+B. What next:
+
+	1. Major:
+
+		a - add a method to verify that the only two required header fields ("Date:" and "From:") are present
+		b - address different MIME types in body
+		c - account for CFWS (comment folding white space) in unfolding method   ****this might not be necessary (do research)
+		
+		NEW STUFF(JANUARY 2016):
+			d - perhaps, verify if if email is valid syntax
+		
+
+	2. Minor:
+	
+		a - add a method to convert a field time to local time
+		
+		
+C. Common Header Fields
+
+	1. Website #1 (arclab.com):
+		
+		a - Return Path		The email address which should be used for bounces
+		b - Delivery-date 	The data the message was delivered
+		c - Date 				The date the message was sent
+		d - Message-ID			The ID of the message
+		e - X-Mailer 			The mail client (mail program) used to send the message
+		f - From 				The message sender in the format: "Friendly Name" <email@address.tld>
+		g  -To 					The message recipient in the format: "Friendly Name" <email@address.tld>
+		h - Subject 			The message subject
+			
+		
+			
+/****  Header Fields IN RFC2822  ****/
+
+   Header fields are lines composed of a field name, followed by a colon
+   (":"), followed by a field body, and terminated by CRLF.  A field
+   name MUST be composed of printable US-ASCII characters (i.e.,
+   characters that have values between 33 and 126, inclusive), except
+   colon.  A field body may be composed of any US-ASCII characters,
+   except for CR and LF.  However, a field body may contain CRLF when
+   used in header "folding" and  "unfolding" as described in section
+   2.2.3.  All field bodies MUST conform to the syntax described in
+   sections 3 and 4 of this standard.
+	
+	notes: based on this information I will use the following code to initialize my scanner, which will use a "\r\n"
+				delimiter: Scanner sMain = new Scanner(inputStream,"UTF-8").useDelimiter("\r\n");
+
