@@ -46,7 +46,7 @@ public class EmailParseUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Email Parser");
-        setPreferredSize(new java.awt.Dimension(700, 720));
+        setPreferredSize(new java.awt.Dimension(970, 720));
 
         jLabel1.setText("Enter file name here:");
         jLabel1.setNextFocusableComponent(file_name_TF);
@@ -111,6 +111,7 @@ public class EmailParseUI extends javax.swing.JFrame {
         if(filePath.isEmpty()){
             return;
         }
+        output_TA.setText("");
         //I choose to ignore UI blocking code for this situation
         EmailParser parser = new EmailParser(output_TA);
         parser.parse(filePath);

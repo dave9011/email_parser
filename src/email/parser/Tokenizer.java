@@ -314,7 +314,6 @@ public class Tokenizer {
     
     public void logTokens(JTextArea outputArea){
         int t=0;
-        
         for( Token token : mTokensList ){ 
             log(t++ + "\t" + token.id + "\t\t" + token.lexeme);
             if( outputArea != null ){

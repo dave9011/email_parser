@@ -55,7 +55,8 @@ public class EmailParser {
         try{
             //if file is not actually a file or does not exist, log the error and return from method
             if(!mEmail.isFile()){
-                log("Error: File \"" + filePath + "\" is not a file or does not exist!");
+                log("Error: We couldn't find the file: \"" + filePath + "\"! (advice: "
+                        + "file name must include file extension)");
                 return;
             }
         } catch(SecurityException e){
@@ -138,7 +139,7 @@ public class EmailParser {
             
         }
         
-        log("\nHere are the header filds you were looking for (\"Received:\" lines should be read from last to first):\n");
+        log("\nHere are the header fields you are looking for (\"Received:\" lines should be read from last to first):\n");
         
         for(HeaderField headerField : mHeaderFieldsList){
             log(headerField.getName() + ": " + headerField.getBody());
@@ -188,6 +189,7 @@ public class EmailParser {
     }
     
     private void log(String str){
+        mOutputArea.append(str+"\n");
         System.out.println(str);
     }
     

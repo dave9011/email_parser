@@ -1,27 +1,41 @@
 
 A. Summary:
 
-	To code this short program I began by reading up on the RFC email specs, as suggested by your website, found in
-	the: Proposed standard for Internet Message Format (RFC2822). In addition, I looked up a several websites that 
-	discussed full email headers and how to analyze them. From this I made the following decisions:
+	To code this short program I began by reading up on the RFC email specs found in the: Proposed standard for Internet Message Format (RFC2822), 
+	which includes the basic syntax for simple emails. 
 	
-		Parse out the following fields as they seem to be the most relevant and the most common(I categorized as most  
-		common the fields that most appeared on the websites I researched):
+	Essentially, a basic mail contains a header area with a number of possible headers (of which only a few are included in the list below), with a 
+	possible email body that is separated from the headers by an empty line. I say basic because the Internet Message format has been extended in 
+	several ways. One in particular, the MIME type, which is outlined in RFC2045 introduces an issue where empty lines are supported in the body,
+	for this reason one of my initial concerns was making sure I could distinguish those empty lines from the empty line dividing the headers from 
+	the body (this actually only occurs, to my knowledge, in MIMI multipart types; the syntax for this can be found in RFC2046).
+	
+	My goal will be to parse an email and extract certain fields. I'll be choosing only a subset of header names from those mentioned in RFC2822,
+	but expanding those supported will be made easy. My initial list, however, will be the following:
 			
-			a. Date*
-			b. From*
-			c. To
-			d. Subject
-			e. Delivery-Date
-			g. Received 
-			h. Message-ID
-			i. Return-Path		
+			a - Date 
+			b - From 
+			c - To
+			d - Cc
+			e - Bcc
+			f - Subject
+			g - "Sender
+			h - "Reply-To
+			i - "Message-ID
+			j - Return Path
+			k - Received	(a trace from the original sender to the recipient that should be read from last to first)
 			
 			* "Date" and "From" are the only two fields that are mandatory in an email header. For this reason I extracted it,
 				even though "From" can be easily forged and therefore is not a reliable header field		
 				
 			note: there are plenty of headers available (a good list can be found in RFC4021), however I will limit myself 
 					to choosing a subset of those mentioned in RFC2822
+					
+	My approach was to first tokenize the email using the syntax specified in RFC2822 into simple parts. Using these tokens, we can parse
+	the email to get whatever header fields we want. Most of the program is focused in the Tokenizer class -> tokenize() method and the 
+	EmailParser class -> parse() method.
+	
+	I'll also incorporate a simple UI that will print the results out in a text area.
 
 B. What next:
 
@@ -29,6 +43,8 @@ B. What next:
 		b - Address different MIME types in body
 		c - Add support for obsolete syntax (see section D, item 2)
 		d - Address the rest of the assumptions
+		e - Add all the registered headers, these are spread out through several RFC's but there are some official ones such as those
+				registered with IANA
 	
 C. Assumptions:
 	
@@ -40,16 +56,16 @@ C. Assumptions:
 	2 - No obsolete fields present 
 	
 D. Notes:
-
-	1. IANA header message header field names
 	
-	2. The Content-Type field for multipart entities requires one parameter, "boundary". The boundary delimiter line is then 
+	1. The Content-Type field for multipart entities requires one parameter, "boundary". The boundary delimiter line is then 
 		defined as a line consisting entirely of two hyphen characters ("-", decimal value 45) followed by the boundary parameter 
 		value from the Content-Type header field, optional linear whitespace, and a terminating CRLF.
 			(i.e. regex: "^--<insert boundary value here>[ \t]*\r\n"; the "<" and ">" characters are not part of the regex)
 			
-	3. For more about MIME multipart syntax read RFC2046
+	2. For more about MIME multipart syntax read RFC2046
 	
-	4. Should remove potential UI blocking code when logging to output_TA
+	3. Should address potential UI blocking issues in UI classes
+	
+	4. I've only tested this program using text files to which I copied some of my emails
 		
 		

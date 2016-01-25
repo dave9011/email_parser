@@ -7,7 +7,12 @@ package email.parser;
 
 public class EmailParserDriver {
     public static void main(String args[]){
-        EmailParser parser = new EmailParser(null); 
-        parser.parse("email4.txt");
+        
+        EmailParseUI.main(args);
+        
+        //TO RUN CODE WITHOUT UI: COMMENT LINES ABOVE THIS AND UNCOMMENT LINES BELOW IT
+        //EmailParser parser = new EmailParser(null); 
+        //parser.parse("email4.txt");    
+    
     }
 }
