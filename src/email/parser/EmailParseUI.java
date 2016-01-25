@@ -114,7 +114,6 @@ public class EmailParseUI extends javax.swing.JFrame {
         //I choose to ignore UI blocking code for this situation
         EmailParser parser = new EmailParser(output_TA);
         parser.parse(filePath);
-        //emailParser.parse("email2.txt");
     }//GEN-LAST:event_parse_BTNActionPerformed
 
     private void file_name_TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_file_name_TFActionPerformed

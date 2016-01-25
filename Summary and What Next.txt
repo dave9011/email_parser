@@ -34,11 +34,11 @@ B. What next:
 		a - add a method to verify that the only two required header fields ("Date:" and "From:") are present
 		b - address different MIME types in body
 		c - account for CFWS (comment folding white space) in unfolding method   ****this might not be necessary (do research)
+		d - add support for obsolete syntax, as of right now we assume that there are no obsolete fields present 
 		
 		NEW STUFF(JANUARY 2016):
 			d - perhaps, verify if if email is valid syntax
 			e - UI blocking code when logging to output_TA
-		
 
 	2. Minor:
 	
@@ -57,25 +57,7 @@ C. Common Header Fields
 		f - From 				The message sender in the format: "Friendly Name" <email@address.tld>
 		g  -To 					The message recipient in the format: "Friendly Name" <email@address.tld>
 		h - Subject 			The message subject
-			
-		
-			
-/****  Header Fields IN RFC2822  ****/
-
-   Header fields are lines composed of a field name, followed by a colon
-   (":"), followed by a field body, and terminated by CRLF.  A field
-   name MUST be composed of printable US-ASCII characters (i.e.,
-   characters that have values between 33 and 126, inclusive), except
-   colon.  A field body may be composed of any US-ASCII characters,
-   except for CR and LF.  However, a field body may contain CRLF when
-   used in header "folding" and  "unfolding" as described in section
-   2.2.3.  All field bodies MUST conform to the syntax described in
-   sections 3 and 4 of this standard.
 	
-	notes: based on this information I will use the following code to initialize my scanner, which will use a "\r\n"
-				delimiter: Scanner sMain = new Scanner(inputStream,"UTF-8").useDelimiter("\r\n");
-
-				
 				
 TODO LIST:
 

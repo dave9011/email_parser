@@ -35,7 +35,7 @@ public class EmailParser {
     
     private JTextArea mOutputArea;
     
-    private String[] fields = {  
+    public final static String[] fields = {  
         "Date:", 
         "From:", 
         "To:",
@@ -47,6 +47,8 @@ public class EmailParser {
         "Return Path:",
         "Mime Version:"
     }; 
+    
+    public final static String[] INFORMATIONAL_FIELD_NAMES = { "Subject", "Comments" };
     
     public EmailParser(JTextArea jTextArea) {
         mOutputArea = jTextArea;

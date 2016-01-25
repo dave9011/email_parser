@@ -18,7 +18,8 @@ public class Tokenizer {
     List<Token> mTokensList;
     
     public enum TokenType {
-        FIELD_NAME, FIELD_LINE, MESSAGE, MESSAGE_BODY_DIVIDER ,BODY, EMPTY_LINE, LAST_LINE
+        FIELD_NAME, FIELD_LINE, MESSAGE, MESSAGE_BODY_DIVIDER ,BODY, EMPTY_LINE, LAST_LINE,
+        UNSTRUCTURED_FIELD_BODY
     }
     
     private class TokenInfo {
@@ -52,10 +53,10 @@ public class Tokenizer {
     private void setUpPatterns(){
     
         //use group 1 for field name
-        addTokenInfoToList("^(.*): ", TokenType.FIELD_NAME);
-        
-        addTokenInfoToList("^(.+)(\r\n)", TokenType.FIELD_LINE);
-        addTokenInfoToList("^(\r\n)", TokenType.EMPTY_LINE);
+        addTokenInfoToList("^(.*?): ", TokenType.FIELD_NAME);   //make this lazy, such as to capture only up to first colon
+        //addTokenInfoToList("([^\r\n]*)\r\n", TokenType.UNSTRUCTURED_FIELD_BODY);
+        addTokenInfoToList("^(.+)\r\n", TokenType.FIELD_LINE);
+        addTokenInfoToList("^\r\n", TokenType.EMPTY_LINE);
         
         //use group 1 for message line without EOF
         addTokenInfoToList("^(.+)\\u001a", TokenType.LAST_LINE);
@@ -87,7 +88,7 @@ public class Tokenizer {
         setUpPatterns();
         
         //Iterate through email
-        while(!email.isEmpty()){
+        while( !email.isEmpty() ){
          
             //We look for the first occurrence of any of our tokens
             for(TokenInfo tokenInfo : mTokenInfoList){
@@ -96,11 +97,20 @@ public class Tokenizer {
                 Matcher matcher = tokenInfo.regexPattern.matcher(email);
                 
                 //If a match is found
-                if(matcher.find()){
+                if( matcher.find() ){
                     
                     String lexeme;
                     if(tokenInfo.tokenType == TokenType.FIELD_NAME){
                         lexeme = matcher.group(1).trim();
+                        
+                        /*
+                        for(String info_field : EmailParser.INFORMATIONAL_FIELD_NAMES){
+                            if( lexeme.equals(info_field) ){
+                                
+                            }
+                        }
+                        */
+                        
                     }else {
                         lexeme = matcher.group().trim();
                     }
@@ -125,12 +135,15 @@ public class Tokenizer {
     public void logTokens(JTextArea outputArea){
         int t=0;
         
-        for(Token token : mTokensList){
+        for( Token token : mTokensList ){
             log(t++ + "\t" + token.lexeme);
-            outputArea.append(token.lexeme + "\n");
+            if( outputArea != null ){
+                outputArea.append(token.lexeme + "\n");
+            }
         }
-        outputArea.setCaretPosition(0); //Return cursor to top of output area
-        
+        if( outputArea != null ){
+            outputArea.setCaretPosition(0); //Return cursor to top of output area
+        }
     }
     
     private void log(String str){
