@@ -4,9 +4,7 @@ package email.parser;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.regex.Matcher;
+import java.util.List;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
@@ -19,33 +17,28 @@ public class EmailParser {
         "Date", "From", "Sender", "Reply-To", "To", "Cc", "Bcc", "Message-ID", "In-Reply-To",
         "References", "Subject", "Commments", "Keywords", "Return-Path"
     };
-
-    //By default folding is disabled
-    private boolean foldingEnabled = false;
-    
-    private ArrayList<String> emailLines = new ArrayList<>();
-    private ArrayList<String> receivedLines = new ArrayList<>();
-    
-    private Pattern pattern;
-    private Matcher matcher;
-    
-    private HashMap<String, String> hashLines = new HashMap<>();  
     
     private File mEmail;
     
-    private JTextArea mOutputArea;
+    private Tokenizer mTokenizer;
     
-    public final static String[] fields = {  
-        "Date:", 
-        "From:", 
-        "To:",
-        "Subject:",
-        "Delivery Date:",
-        "X-Originating-IP:",
-        "Received:",
-        "Message-ID:",
-        "Return Path:",
-        "Mime Version:"
+    private List<HeaderField> mHeaderFieldsList;
+    
+    private JTextArea mOutputArea;  //if using UI, this is the text area where we would print output
+    
+    //Header fields we will output
+    public final static String[] FIELD_NAMES_TO_OUTPUT = {  
+        "Date", 
+        "From", 
+        "To",
+        "Cc",
+        "Bcc",
+        "Subject",
+        "Sender",
+        "Reply-To",
+        "Message-ID",
+        "Return Path",
+        "Received"
     }; 
     
     public final static String[] INFORMATIONAL_FIELD_NAMES = { "Subject", "Comments" };
@@ -72,12 +65,84 @@ public class EmailParser {
             
         //Unfold the email, trim the result, and append an EOF character which
         //will be necessary when we tokenize
-        String unfoldedEmail = unfold(mEmail, false).trim().concat("\u001a");
+        String unfoldedEmail = unfold(mEmail, false);
         
-        Tokenizer tokenizer = new Tokenizer();
-        tokenizer.tokenize(unfoldedEmail);
+        if(unfoldedEmail.isEmpty()){
+            log("File is empty!");
+            return;
+        }
+
+        unfoldedEmail = unfoldedEmail.trim().concat("\u001a");
         
-        tokenizer.logTokens(mOutputArea);
+        mTokenizer = new Tokenizer();
+        mTokenizer.tokenize(unfoldedEmail);
+        
+        //mTokenizer.logTokens(mOutputArea);    //for testing purposes
+       
+        mHeaderFieldsList = new ArrayList<>();
+        
+        int tokensIndex = 0;
+        headerFiledsLoop:
+        while( !mTokenizer.checkIsTokenType(tokensIndex, Tokenizer.TokenType.EMPTY_LINE) ){
+            
+            if( mTokenizer.checkIsTokenType(tokensIndex, Tokenizer.TokenType.MULTIPART_BODY) ){
+                tokensIndex++;  //move to next index to skip this token
+                continue;
+            } else {
+                
+                String headerFieldName = ""; //variable to hold the name we use to create our HeaderField object
+                String headerFieldBody = ""; //variable to hold the body we use to create our HeaderField object
+                
+                if( !mTokenizer.checkIsTokenType(tokensIndex, Tokenizer.TokenType.FIELD_NAME) ){
+                    log("Email header field name not found.");
+                    return;
+                }
+                
+                String fieldNameLexeme = mTokenizer.getTokenLexeme(tokensIndex++);  //get token lexeme and move to next token index
+                if( fieldNameLexeme != null ) {    
+                
+                    //Check to see if we match any of the header fields we are interested in parsing out
+                    for(String fieldName : FIELD_NAMES_TO_OUTPUT){
+                        if(fieldNameLexeme.equals(fieldName)){
+                            headerFieldName = fieldNameLexeme;
+                            break;
+                        }
+                    }
+                    
+                } else {
+                    log("Email header field name lexeme not found.");
+                    return;
+                }
+                
+                if(headerFieldName.isEmpty()){
+                    tokensIndex++;
+                    continue headerFiledsLoop;
+                }
+
+                if( !mTokenizer.checkIsTokenType(tokensIndex, Tokenizer.TokenType.FIELD_BODY) && !mTokenizer.checkIsTokenType(tokensIndex, Tokenizer.TokenType.UNSTRUCTURED_FIELD_BODY) ){
+                    log("Email header body name not found.");
+                    return;
+                }
+                
+                String fieldBodyLexeme = mTokenizer.getTokenLexeme(tokensIndex++);  //get token lexeme and move to next token index
+                if( fieldBodyLexeme != null ) {    
+                    headerFieldBody = fieldBodyLexeme;
+                } else {
+                    log("Email header field body lexeme not found.");
+                    return;
+                }
+                
+                mHeaderFieldsList.add( new HeaderField(headerFieldName, headerFieldBody) );
+                
+            }
+            
+        }
+        
+        log("\nHere are the header filds you were looking for (\"Received:\" lines should be read from last to first):\n");
+        
+        for(HeaderField headerField : mHeaderFieldsList){
+            log(headerField.getName() + ": " + headerField.getBody());
+        }
         
     }
 
