@@ -13,51 +13,44 @@ A. Summary:
 				c. To
 				d. Subject
 				e. Delivery-Date
-				f. X-Originating-IP**
 				g. Received 
 				h. Message-ID
 				i. Return-Path		
 				
 				* "Date" and "From" are the only two fields that are mandatory in an email header. For this reason I extracted it,
 				   even though "From" can be easily forged and therefore is not a reliable header field		
-
-				** Not a standard header field but can be used to quickly find the IP address of the original sender; this can also
-					be achieved by looking at the IP address of the last "Received" header
+					
+				note: there are plenty of headers available (a good list can be found in RFC4021), however I will limit myself 
+						to choosing a subset of those mentioned in RFC2822
 					
 		2. Add a method that "unfolds" the e-mail. This method returns a string representation of the unfolded e-mail and has a 
 			parameter that allows the user to keep the extra whitespace after unfolding or remove (false by default).
 
 B. What next:
 
-	1. Major:
-
-		a - add a method to verify that the only two required header fields ("Date:" and "From:") are present
-		b - address different MIME types in body
-		c - account for CFWS (comment folding white space) in unfolding method   ****this might not be necessary (do research)
-		d - add support for obsolete syntax, as of right now we assume that there are no obsolete fields present 
-		
-		NEW STUFF(JANUARY 2016):
-			d - perhaps, verify if if email is valid syntax
-			e - UI blocking code when logging to output_TA
-
-	2. Minor:
-	
-		a - add a method to convert a field time to local time
-		
+		a - Add a method to verify that the only two required header fields ("Date:" and "From:") are present
+		b - Address different MIME types in body
+		c - Add support for obsolete syntax (see section D, item 2)
+		d - Address the rest of the assumptions
+		e - Remove potential UI blocking code when logging to output_TA
 		
 C. Common Header Fields
 
-	1. Website #1 (arclab.com):
-		
-		a - Return Path		The email address which should be used for bounces
-		b - Delivery-date 	The data the message was delivered
-		c - Date 				The date the message was sent
-		d - Message-ID			The ID of the message
-		e - X-Mailer 			The mail client (mail program) used to send the message
-		f - From 				The message sender in the format: "Friendly Name" <email@address.tld>
-		g  -To 					The message recipient in the format: "Friendly Name" <email@address.tld>
-		h - Subject 			The message subject
 	
+	
+D. Assumptions:
+	
+	1 - Email is valid syntax
+	2 - No obsolete fields present 
+	
+E. Notes:
+
+	1. IANA header message header field names
+	2. The Content-Type field for multipart entities requires one parameter, "boundary". The boundary delimiter line is then 
+		defined as a line consisting entirely of two hyphen characters ("-", decimal value 45) followed by the boundary parameter 
+		value from the Content-Type header field, optional linear whitespace, and a terminating CRLF.
+			(i.e. regex: "^--<insert boundary value here>[ \t]*\r\n"; the "<" and ">" characters are not part of the regex)
+	3. For more about MIME multipart syntax read RFC2046
 				
 TODO LIST:
 

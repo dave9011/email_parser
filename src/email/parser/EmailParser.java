@@ -79,82 +79,8 @@ public class EmailParser {
         
         tokenizer.logTokens(mOutputArea);
         
-        //initialize scanner, making its delimiter a CRLF to parse the header fields
-        Scanner scanner = new Scanner(unfoldedEmail).useDelimiter("\r\n");
-        
-        //log("\n---------------Header Fields----------------");        COMMENTED THIS OUT FOR TESTING TOKENIZER
-        
-        /*
-        scanLoop:
-        while(scanner.hasNextLine()){
-
-            String line = scanner.nextLine();
-
-            //if(line.contains("\r") || line.contains("\n") || line.contains("\r\n")){
-            //    log("***************a line break*********");
-            //    break scanLoop;
-            //}
-
-            //
-            if(line.isEmpty()){
-                break scanLoop;
-            }
-               
-            if(line.startsWith("Received:")){
-                //line = line.replaceFirst("Received:", "");
-                //line = line.trim();
-                
-                //log(line);        COMMENTED THIS OUT FOR TESTING TOKENIZER
-                
-                line = line.replaceFirst("\\s*Received:\\s*", "");
-                emailLines.add(line); 
-                receivedLines.add(line); 
-                continue scanLoop;
-            } 
-
-            for(String fld : HEADER_FIELD_NAMES) { 
-
-                if(line.startsWith(fld)) {
-                    
-                    //log(line);    COMMENTED THIS OUT FOR TESTING TOKENIZER
-                    
-                    emailLines.add(line); 
-
-                    continue scanLoop;
-
-                }
-
-            }
-
-        }
-        
-        //log("\n---------------Message Body----------------"); COMMENTED THIS OUT FOR TESTING TOKENIZER
-        while(scanner.hasNextLine()){
-            //log(scanner.nextLine());   COMMENTED THIS OUT FOR TESTING TOKENIZER
-        }
-
-
-        //for(Map.Entry entry : hashLines.entrySet()){
-        //    log(entry.getKey() + ": " + entry.getValue());
-        //}
-        //log("Path of email: ");
-        //for(String rec_line : receivedLines){
-        //    log("\t" + rec_line);
-        //}
-
-        //log();
-        * 
-        * */
-       
-        
-        
     }
-    
-    private void parseHeaders(){
-        
-        
-    }
-    
+
     /**
     * Unfold the email by removing any and all CRLF's
     * that are followed by whitespace
@@ -173,13 +99,10 @@ public class EmailParser {
             //Put the email into a string
             String fileInString = FileUtils.readFileToString(email); 
             
-            String CRLF = "\r\n";
-            
             String unfoldingRegex = "([ \\t]*|(\\r\\n))([ \\t]+)";
             
             //Set up the regular expression for unfolding
             Pattern unfoldingPattern = Pattern.compile(unfoldingRegex);
-            //Pattern unfoldingPattern = // Pattern.compile("\r\n([^\\S\\r\\n]+)");
             
             //Remove the CRLF's and whitespace depending on the value of
             //the parameter 'keepWhitespace'

@@ -18,8 +18,7 @@ public class Tokenizer {
     List<Token> mTokensList;
     
     public enum TokenType {
-        FIELD_NAME, FIELD_LINE, MESSAGE, MESSAGE_BODY_DIVIDER ,BODY, EMPTY_LINE, LAST_LINE,
-        UNSTRUCTURED_FIELD_BODY
+        FIELD_NAME, FIELD_BODY, UNSTRUCTURED_FIELD_BODY, EMPTY_LINE, MESSAGE_BODY_DIVIDER, LAST_LINE
     }
     
     private class TokenInfo {
@@ -52,26 +51,12 @@ public class Tokenizer {
     
     private void setUpPatterns(){
     
-        //use group 1 for field name
-        addTokenInfoToList("^(.*?): ", TokenType.FIELD_NAME);   //make this lazy, such as to capture only up to first colon
-        //addTokenInfoToList("([^\r\n]*)\r\n", TokenType.UNSTRUCTURED_FIELD_BODY);
-        addTokenInfoToList("^(.+)\r\n", TokenType.FIELD_LINE);
-        addTokenInfoToList("^\r\n", TokenType.EMPTY_LINE);
+        //use group 1 for field names and field bodies
+        addTokenInfoToList("^(.*?):[ \t]*", TokenType.FIELD_NAME);   //make this lazy, such as to capture only up to first colon
+        addTokenInfoToList("^([^\\r\\n]+)\\r\\n", TokenType.FIELD_BODY);    
         
-        //use group 1 for message line without EOF
-        addTokenInfoToList("^(.+)\\u001a", TokenType.LAST_LINE);
-             
-       /* "Date:", 
-        "From:", 
-        "To:",
-        "Subject:",
-        "Delivery Date:",
-        "X-Originating-IP:",
-        "Received:",
-        "Message-ID:",
-        "Return Path:",
-        "Mime Version:"    
-        */
+        addTokenInfoToList("^\r\n", TokenType.EMPTY_LINE);
+        addTokenInfoToList("^(.+)\\u001a", TokenType.LAST_LINE);    //use group 1 for message line without EOF
                 
     }
     
@@ -80,6 +65,9 @@ public class Tokenizer {
     }
     
     public void tokenize(String str){
+        
+        boolean couldHaveUnstructured = false;  //flag set true when we encounter an potential unstructure field
+        boolean fieldNameWasLastMatch = false;  //flag for when we find a field name
         
         String email = str;
         
@@ -92,6 +80,12 @@ public class Tokenizer {
          
             //We look for the first occurrence of any of our tokens
             for(TokenInfo tokenInfo : mTokenInfoList){
+                
+                //If the previous token was a field name we move on to look for a field body, instead of another field name
+                if(fieldNameWasLastMatch){
+                    fieldNameWasLastMatch = false;
+                    continue;
+                }
             
                 //Look for a match within the current string
                 Matcher matcher = tokenInfo.regexPattern.matcher(email);
@@ -100,27 +94,78 @@ public class Tokenizer {
                 if( matcher.find() ){
                     
                     String lexeme;
-                    if(tokenInfo.tokenType == TokenType.FIELD_NAME){
+                    
+                    //Check if the lexeme we found is a field header name
+                    if(tokenInfo.tokenType == TokenType.FIELD_NAME || tokenInfo.tokenType == TokenType.FIELD_BODY){
+                        
+                        /*  
+                         *  If we found a field name we set the "fieldNameWasLastMatch" flag to true,
+                         *  which will be indicate to skip looking for a field name in the next
+                         *  loop iteration; the reason for this is to prevent looking for two
+                         *  field names in a row
+                         */
+                        if(tokenInfo.tokenType == TokenType.FIELD_NAME){
+                            fieldNameWasLastMatch = true;
+                        }
+                        
+                        //If it is then we capture the 1st group only; to exclude the colon
                         lexeme = matcher.group(1).trim();
                         
-                        /*
+                        //Check for the special case of unstructred header
                         for(String info_field : EmailParser.INFORMATIONAL_FIELD_NAMES){
+                            
+                            //if we found a header that could have an unstructured body, set a flag
                             if( lexeme.equals(info_field) ){
-                                
+                                couldHaveUnstructured = true;  
+                                break;
                             }
+                            
                         }
-                        */
+                                             
+                    } else {
                         
-                    }else {
+                        /*
+                         *  Typically an empty line separates the email headers from the body, however
+                         *  with the inclusion of the MIME multipart type there can be empty lines in 
+                         *  the MIME body within its boundary; this method will check if we are at a MIME
+                         *  multipart body and will process all lines within in up until it's final boundary
+                         */
+                       // if(tokenInfo.tokenType == TokenType.EMPTY_LINE){
+                            
+                       //     String lastLexeme = mTokensList.get(mTokensList.size()-1).lexeme;
+                            
+                       //     Matcher boundaryMatcher = Pattern.compile("").matcher(lastLexeme);
+                            
+                            //if()
+                            
+                        //}
+                        
                         lexeme = matcher.group().trim();
+                        
                     }
                     
-
                     //Add the token to our list
                     mTokensList.add( new Token(lexeme, tokenInfo.tokenType) );
 
                     //Remove our found lexeme from the email string
                     email = matcher.replaceFirst("");
+                    
+                    //Look for a potential unstructured field body
+                    if(couldHaveUnstructured){
+                        
+                        couldHaveUnstructured = false; 
+                        
+                        //Set up matcher using pattern for unstructure field body
+                        Matcher unstructuredMatcher = (Pattern.compile("^([^\\r\\n]*)\\r\\n")).matcher(email);
+                        
+                        //If we find an unstructured field body
+                        if(unstructuredMatcher.find()){
+                            lexeme = unstructuredMatcher.group(1);  
+                            mTokensList.add( new Token(lexeme, TokenType.UNSTRUCTURED_FIELD_BODY) );
+                            email = unstructuredMatcher.replaceFirst("");
+                        }
+                        
+                    }
                     
                     break;
                     
@@ -135,8 +180,8 @@ public class Tokenizer {
     public void logTokens(JTextArea outputArea){
         int t=0;
         
-        for( Token token : mTokensList ){
-            log(t++ + "\t" + token.lexeme);
+        for( Token token : mTokensList ){ 
+            log(t++ + "\t" + token.id + "\t\t" + token.lexeme);
             if( outputArea != null ){
                 outputArea.append(token.lexeme + "\n");
             }
